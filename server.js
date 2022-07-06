@@ -1,10 +1,10 @@
 //Dependencies found here
-const inquirer = require("inquirer");
-const mysql = require("mysql");
-const cTable = require("console.table");
-const db = require(".");
+import { prompt } from "inquirer";
+import { createConnection } from "mysql";
+import cTable from "console.table";
+import db from ".";
 
-const connection = mysql.createConnection({
+const connection = createConnection({
   host: "localhost",
 
   // Your port; if not 3306
@@ -28,8 +28,7 @@ connection.connect(function(err) {
 
   //What the user will first see once logged into node
 function startScreen() {
-    inquirer
-      .prompt({
+    prompt({
         type: "list",
         choices: [
           "Add department",
@@ -80,7 +79,7 @@ function startScreen() {
 function addDepartment() {
 
 
-    inquirer.prompt({
+    prompt({
       
         type: "input",
         message: "What is the name of the department?",
@@ -99,8 +98,7 @@ function addDepartment() {
 }
 
 function addRole() {
-    inquirer
-      .prompt([
+    prompt([
         {
           type: "input",
           message: "What's the name of the role?",
@@ -128,8 +126,7 @@ function addRole() {
       });
   }
   function addEmployee() {
-    inquirer
-      .prompt([
+    prompt([
         {
           type: "input",
           message: "What's the first name of the employee?",
@@ -165,8 +162,7 @@ function addRole() {
     //Using inquirer, we can pass the query into the method as an array
 
 function updateEmployee() {
-    inquirer
-      .prompt([
+    prompt([
         {
           type: "input",
           message: "Which employee would you like to update?",
