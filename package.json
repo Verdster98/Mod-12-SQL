@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/Verdster98/Mod-12-SQL/issues"
   },
-  "homepage": "https://github.com/Verdster98/Mod-12-SQL#readme"
+  "homepage": "https://github.com/Verdster98/Mod-12-SQL#readme",
+  "dependencies": {
+    "inquirer": "^9.0.0"
+  }
 }
